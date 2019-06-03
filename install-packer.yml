@@ -1,0 +1,9 @@
+---
+- hosts: "{{host}}"
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: Install the packer
+      get_url:
+        url: https://releases.hashicorp.com/packer/1.4.1/packer_1.4.1_linux_amd64.zip
+        dest: /usr/local/bin
